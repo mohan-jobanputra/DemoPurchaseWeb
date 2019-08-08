@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		var product = location.href.split('prod=')[1].split('%3A')[0];
 		var price = location.href.split('prod=')[1].split('%3A')[1];
-		var image = product+".png";
+		var image = product.toLowerCase()+".png";
 		document.getElementById('prodImage').src = image;
 		document.getElementById('prodName').innerHTML = "&emsp;"+product;
 		document.getElementById('prodPrice').innerHTML = "&emsp;&#8377;"+price+"/-";
