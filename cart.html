@@ -9,7 +9,7 @@
 
 				var product = document.cookie.split('productName=')[1].split(';')[0]; 	
 				var price = document.cookie.split('productPrice=')[1].split(';')[0];
-				var image = product+".png";
+				var image = product.toLowerCase()+".png";
 
 				console.log("product name is:",product);
 				console.log("product price is:",price);
