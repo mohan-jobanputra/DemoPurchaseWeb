@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web:std:s1:pdp:shirt</title>
+	<script type="text/javascript">
+		dataLayer=[];
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TR9QT3N');</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body>
+
+	<h1>Product Details -</h1>
+	<img id="prodImage" width="160px" height="160px">
+	<h2 id="prodName"></h2>
+	<h3 id="prodPrice"></h3>
+	<form action="s3_cart_shirt.html">
+		<input type="submit" value="Add to Cart">
+	</form>
+	<script type="text/javascript">
+		var product = "shirt";
+		var price = "7,99";
+		var image = "shirt.png";
+		document.getElementById('prodImage').src = image;
+		document.getElementById('prodName').innerHTML = "&emsp;"+product;
+		document.getElementById('prodPrice').innerHTML = "&emsp;&#8377;"+price+"/-";
+		console.log("product name is:",product);
+		console.log("product price is:",price);
+		document.cookie = "productName="+product;
+		document.cookie = "productPrice="+price;
+
+		if(product){
+			dataLayer.push({
+				'event': 'pageview',
+				'pagename': 'web:std:s1:pdp:shirt'
+			});
+		}
+
+		if(product){
+			dataLayer.push({
+				'event': 'ecomm',
+				'ecomm_action': 'pdp'
+			});
+		}	
+
+	</script>
+</body>
+</html>

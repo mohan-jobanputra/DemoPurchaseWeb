@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web:std:s3:checkout:shirt</title>
+	<script type="text/javascript">
+		dataLayer=[];
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TR9QT3N');</script>
+	<!-- End Google Tag Manager -->
+	<script type="text/javascript">
+		var product = "shirt";
+		var price = 799;
+		var qty = location.href.split('qty=')[1].split('&')[0].replace(/\,/gi,'');
+
+		if(product){
+			dataLayer.push({
+				'event': 'pageview',
+				'pagename': 'web:std:s3:checkout:shirt'
+			});
+		}
+
+		if(product){
+			dataLayer.push({
+				'event': 'ecomm',
+				'ecomm_action': 'checkout'
+			});
+		}
+
+		console.log("product name is:"+product+"\nproduct price is:"+price+"\nproduct quantity is:"+qty)
+		console.log("Total = "+qty*price);
+	</script>
+</head>
+<body>
+	<h2 id="abc">Checkout</h2><br>
+	<table>
+		<tr>
+			<td>Product Name</td>
+			<td id="prodName" align="center">&emsp;1</span></td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td id="prodPrice" align="center">&emsp;2</td>
+		</tr>
+		<tr>
+			<td>Quantity</td>
+			<td id="prodQty" align="center">&emsp;3</td>
+		</tr>
+		<tr>
+			<td>Total amount<br>payable</td>
+			<td id="totalAmt" align="center">&emsp;4</td></b>
+		</tr>
+	</table><br>
+	<form action="thankyou.html" method="get">
+		<a href="s5_thankyou_shirt.html"><input type="button" value="Make Payment"/></a>
+	</form>
+	<script type="text/javascript">
+		document.getElementById('prodName').innerHTML = "&emsp;"+product;
+		document.getElementById('prodPrice').innerHTML = "&emsp;&#8377;"+price+"/-";
+		document.getElementById('prodQty').innerHTML = "&emsp;"+qty;
+		document.getElementById('totalAmt').innerHTML = "&emsp;&#8377;"+(qty*price)+"/-";
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web:home</title>
+	<script type="text/javascript">
+		dataLayer=[];
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TR9QT3N');</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body>
+	<script type="text/javascript">
+	dataLayer.push({
+					'event': 'pageview',
+					'pagename': 'web:home'
+			});
+
+	if(product){
+			dataLayer.push({
+				'event': 'ecomm',
+				'ecomm_action': 'impression'
+			});
+	}
+	</script>
+
+	<h2>Product Catalogue</h2>
+		<table>
+			<tr align="center">
+				<td><a class ="prod" href="s2_pdp_shoes.html"><image src = "shoes.png" height ="80px" width = "80px"/><br><br>shoes</a></td>
+				<td><a class ="prod" href="s2_pdp_shirt.html"><image src = "shirt.png" height ="80px" width = "80px"/><br><br>Shirt</a></td>
+			</tr>
+			<tr align="center">
+				<td><br>&#8377; 1,500/-</td>
+				<td><br>&#8377; 7,99/-</td>
+			</tr>
+		</table>
+
+	<h2>Quick Buy - </h2>
+		<table>
+			<tr align="center">
+				<td><a class ="prod" href="qb_thankyou_laptop.html"><image src = "laptop.png" height ="80px" width = "80px"/><br><br>Laptop</a></td>
+				<td><a class ="prod" href="qb_thankyou_phone.html"><image src = "phone.png" height ="80px" width = "80px"/><br><br>Phone</a></td>
+			</tr>
+			<tr align="center">
+				<td><br>&#8377; 1,99,900/-</td>
+				<td><br>&#8377; 32,500/-</td>
+			</tr>
+		</table>
+</body>
+</html>

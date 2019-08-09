@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<script type="text/javascript">
+		function validate(){
+			var regex_name = /^[a-zA-Z1-3]{2,20}$/;
+			var uid =  document.loginForm.uid.value;
+			if(uid==""){
+				uid_error.innerHTML="&emsp; User id should not be empty!";
+				return false;
+			}
+			else if (regex_name.test(uid)){
+				uid_error.innerHTML="";
+				document.cookie = "userID="+uid;
+				return true;
+			}
+			else{
+				uid_error.innerHTML="&emsp; Please enter valid User ID!";
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Login hereEEEEEEEEEEEEEEE</h1>
+	<form name="loginForm"  action="impression.html" method="get" onsubmit="return validate();">
+		User ID:<br><input type="text" name="uid"><span id="uid_error" style="color: red"> *</span><br><br>
+		<input type="submit" value="Login">
+	</form>
+</body>
+</html>
