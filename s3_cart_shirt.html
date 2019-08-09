@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web:std:s2:a2c:shirt</title>
+	<script type="text/javascript">
+		dataLayer=[];
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TR9QT3N');</script>
+	<!-- End Google Tag Manager -->
+	<script>
+	    window.onload = function () {
+			// var product = location.href.split('prod=')[1].split('%3A')[0];
+			// var price = location.href.split('prod=')[1].split('%3A')[1];
+
+			var product = "shirt";
+			var price = "7,99";
+			var image = "shirt.png";
+
+			console.log("product name is:",product);
+			console.log("product price is:",price);
+			document.cookie = "productName="+product;
+			document.cookie = "productPrice="+price;
+
+			document.getElementById('prodImage').src = image;
+			document.getElementById('prodName').innerHTML = "&emsp;"+product;
+			document.getElementById('prodPrice').innerHTML = "&emsp;&#8377;"+price+"/-";
+
+			if(product){
+				dataLayer.push({
+					'event': 'pageview',
+					'pagename': 'web:std:s2:a2c:shirt'+product
+				});
+			}
+
+			if(product){
+				dataLayer.push({
+					'event': 'ecomm',
+					'ecomm_action': 'cart'
+				});
+			}
+
+		}
+		function validate(){
+			var regex_name = /^[1-9]{1}$/;
+			var qty =  document.selectQty.qty.value;
+			if(qty==""){
+				qty_error.innerHTML="&emsp; Please select quantity (minumum 1 | maximum 9)";
+				return false;
+			}
+			else if (regex_name.test(qty)){
+				qty_error.innerHTML="";
+				return true;
+			}
+			else{
+				qty_error.innerHTML="&emsp;  Quantity must be within 1 to 9";
+				return false;
+			}
+		}
+	  </script>
+</head>
+<body>
+	<h1>Cart</h1>
+	<img id="prodImage" width="160px" height="160px">
+	<h3 id="prodName"></h3>
+	<h4 id="prodPrice"></h4>
+	<form name="selectQty" action="s4_checkout_shirt.html" method="get" onsubmit="return validate();">Specify Quantity:
+	    <input type="text" name="qty" value="1"><span id="qty_error" style="color: red"> * (min 1 | max 9)</span><br><br>
+	    <input type="submit" value="Update Quantity & checkout">
+	</form>
+	<script type="text/javascript">
+		    
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checkout</title>
+	<script type="text/javascript">
+		var product = document.cookie.split('productName=')[1].split(';')[0]; 	
+		var price = document.cookie.split('productPrice=')[1].split(';')[0];
+		var qty = location.href.split('qty=')[1].split('&')[0];
+		console.log("product name is:"+product+"\nproduct price is:"+price+"\nproduct quantity is:"+qty)
+		console.log("Total = "+qty*price);
+	</script>
+</head>
+<body>
+	<h2 id="abc">Checkout</h2><br>
+	<table>
+		<tr>
+			<td>Product Name</td>
+			<td id="prodName" align="center">&emsp;1</span></td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td id="prodPrice" align="center">&emsp;2</td>
+		</tr>
+		<tr>
+			<td>Quantity</td>
+			<td id="prodQty" align="center">&emsp;3</td>
+		</tr>
+		<tr>
+			<td>Total amount<br>payable</td>
+			<td id="totalAmt" align="center">&emsp;4</td></b>
+		</tr>
+	</table><br>
+	<form action="thankyou.html" method="get">
+		<a href="thankyou.html"><input type="button" value="Make Payment"/></a>
+	</form>
+	<script type="text/javascript">
+		document.getElementById('prodName').innerHTML = "&emsp;"+product;
+		document.getElementById('prodPrice').innerHTML = "&emsp;&#8377;"+price+"/-";
+		document.getElementById('prodQty').innerHTML = "&emsp;"+qty;
+		document.getElementById('totalAmt').innerHTML = "&emsp;&#8377;"+price*qty+"/-";
+	</script>
+</body>
+</html>
